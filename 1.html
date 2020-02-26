@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document
+      
+    </title>
+    <style>
+.parent{
+    display: flex;
+    width: 80%;
+    height: 200px;
+    background-color: whitesmoke;
+    border: 2px solid black;
+    padding: 32px;
+}
+.input{
+    width: 60%;
+}
+
+.inputfield{
+    padding-bottom: 24px;
+}
+
+#validBtn{
+    width: 60%;
+    font-size: 14px;
+    border: black 2px solid;
+    border-radius: 20px;
+    padding: 10px 15px;
+
+}
+
+
+
+
+    </style>
+</head>
+<body>
+  <section>
+  <div class="parent">
+      <div class="input">
+          <div class="inputfield">
+              <input type="number" id="nbr_g" >
+          </div>
+
+          <div>
+              <a type="button" id="validBtn" onclick="start()"> VALID</a>
+              
+          </div>
+      </div>
+ 
+      </div>
+      
+  </div>
+</section>
+<script>
+  var nbr_r= Math.floor(Math.random() * 21);
+  console.log(nbr_r);
+var user = document.getElementById('nbr_g');
+
+var trying = 1;
+var count;
+
+function start(){
+    if(user.value == "" || user.value > 20 || user.value < 0 ){
+        alert(" Entre a number between 0 and 20 ") ;
+    }else{
+        
+        if(user.value == nbr_r){
+            alert(" wiiiiiiin  The correct guess is: " + nbr_r);
+
+            
+        }else{
+            alert("not matching ,try again");
+        }
+        count = trying++;
+        alert("Number of attempts is:" + count) ;
+    }
+    user.value="";
+}
+
+</script>
+
+</body>
+</html>
